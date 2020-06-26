@@ -1,5 +1,5 @@
-import random_word_generator
-import colord
+import randomWordGenerator
+import printer
 
 vowels = ('a', 'e', 'i', 'o', 'u')
 
@@ -22,21 +22,12 @@ def updateVisibleAlphabetsWithGuess(actualWord, guess, visibleAlphabets, attempt
     return visibleAlphabets, attemptsRemaining
 
 
-def printVisibleAlphabets(visibleAlphabets, attemptsRemaining):
-    colord.print_information("Current State: ", end=" ")
-    for i in visibleAlphabets:
-        colord.print_information(i, end=" ")
-    colord.print_warning("\tAttempts Remaining : %d" % attemptsRemaining)
-
-
 def gameHasEnded(actualWord, guessedWord, attemptsRemaining):
     if guessedWord == actualWord:
-        colord.print_sucess("You WON! :D")
-        return True
+        return printer.success("You WON! :D")
     elif attemptsRemaining <= 0:
-        colord.print_failure("You Lost :(")
-        colord.print_information("Word was %s" % actualWord)
-        return True
+        printer.failure("You Lost :(")
+        return printer.information("Word was %s" % actualWord)
     return False
 
 
@@ -44,19 +35,15 @@ def isVowel(character):
     return character in vowels
 
 
-def createVisibleAlphabets(actualWord):
-    visibleAlphabets = ''
-    for i in range(len(actualWord)):
-        visibleAlphabets += actualWord[i] if isVowel(actualWord[i]) else '_'
-
-    return visibleAlphabets
+def createVisibleAlphabets(word):
+    return ''.join([word[i] if isVowel(word[i]) else '_' for i in range(len(word))])
 
 
 def startGame(attempts=5):
-    actualWord = random_word_generator.getRandomWord()
+    actualWord = randomWordGenerator.getRandomWord()
     visibleAlphabets = createVisibleAlphabets(actualWord)
     attemptsRemaining = attempts
-    printVisibleAlphabets(visibleAlphabets, attemptsRemaining)
+    printer.gameStatus(visibleAlphabets, attemptsRemaining)
 
     while True:
         guess = input("Guess a character: ")
@@ -64,7 +51,7 @@ def startGame(attempts=5):
 
         visibleAlphabets, attemptsRemaining = updateVisibleAlphabetsWithGuess(actualWord, guess, visibleAlphabets,
                                                                               attemptsRemaining)
-        printVisibleAlphabets(visibleAlphabets, attemptsRemaining)
+        printer.gameStatus(visibleAlphabets, attemptsRemaining)
         if gameHasEnded(actualWord, visibleAlphabets, attemptsRemaining):
             break
 

@@ -1,6 +1,5 @@
 class Colors:
     """ ANSI color codes """
-
     BLACK = "\033[0;30m"
     RED = "\033[0;31m"
     GREEN = "\033[0;32m"
@@ -17,17 +16,26 @@ class Colors:
     END = "\033[0m"
 
 
-def print_sucess(text="Sample Text", end="\n"):
+def success(text="Sample Text", end="\n"):
     print(Colors.GREEN + Colors.BOLD + text + Colors.END, end=end)
+    return True
 
 
-def print_failure(text="Sample Text", end="\n"):
+def failure(text="Sample Text", end="\n"):
     print(Colors.RED + Colors.BOLD + text + Colors.END, end=end)
 
 
-def print_information(text="Sample Text", end="\n"):
+def information(text="Sample Text", end="\n"):
     print(Colors.BLUE + Colors.BOLD + text + Colors.END, end=end)
+    return True
 
 
-def print_warning(text="Sample Text", end="\n"):
+def warning(text="Sample Text", end="\n"):
     print(Colors.YELLOW + Colors.BOLD + text + Colors.END, end=end)
+
+
+def gameStatus(visibleAlphabets, attemptsRemaining):
+    information("Current State: ", end=" ")
+    for i in visibleAlphabets:
+        information(i, end=" ")
+    warning("\tAttempts Remaining : %d" % attemptsRemaining)
