@@ -2,9 +2,8 @@ import random
 
 
 # Picks a random word from a predefined list of Words
-def pick_random_word():
-    # Pre-defined words
-    word_list = ["about", "above", "across", "act", "active", "activity", "add", "afraid", "after", "again", "age",
+def getRandomWord():
+    words = ["about", "above", "across", "act", "active", "activity", "add", "afraid", "after", "again", "age",
                  "ago", "agree", "air", "all", "alone", "along", "already", "always", "am", "amount", "an", "and",
                  "angry", "another", "answer", "any", "anyone", "anything", "anytime", "appear", "apple", "are", "area",
                  "arm", "army", "around", "arrive", "art", "as", "ask", "at", "attack", "aunt", "autumn", "away",
@@ -95,8 +94,5 @@ def pick_random_word():
                  "wise", "wish", "with", "without", "woman", "wonder", "word", "work", "world", "worry", "yard", "yell",
                  "yesterday", "yet", "you", "young", "your", "zero", "zoo"]
 
-    # Select a Random Integer from 0 to length of 'word list'
-    selected_index = random.randint(0, len(word_list))
-
-    # Use that index to select random word and return the word
-    return word_list[selected_index]
+    randomIndex = random.randint(0, len(words))
+    return words[randomIndex]
