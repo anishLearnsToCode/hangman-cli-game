@@ -24,7 +24,7 @@ def getRandomWord():
                  "dangerous", "dark", "daughter", "day", "dead", "decide", "decrease", "deep", "deer", "depend", "desk",
                  "destroy", "develop", "die", "different", "difficult", "dinner", "direction", "dirty", "discover",
                  "dish", "do", "dog", "door", "double", "down", "draw", "dream", "dress", "drink", "drive", "drop",
-                 "dry", "duck", "dust", "duty" "each", "ear", "early", "earn", "earth", "east", "easy", "eat",
+                 "dry", "duck", "dust", "duty", "each", "ear", "early", "earn", "earth", "east", "easy", "eat",
                  "education", "effect", "egg", "eight", "either", "electric", "elephant", "else", "empty", "end",
                  "enemy", "enjoy", "enough", "enter", "equal", "entrance", "escape", "even", "evening", "event", "ever",
                  "every", "everyone", "exact", "everybody", "examination", "example", "except", "excited", "exercise",
