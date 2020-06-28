@@ -36,12 +36,7 @@ def isVowel(character):
 
 
 def createVisibleAlphabets(word):
-    # alphabets = ''
-    # for character in word:
-    #    alphabets += character if isVowel(character) else '_'
-    # return alphabets
-
-    return ''.join([word[i] if isVowel(word[i]) else '_' for i in range(len(word))])
+    return ''.join([character if isVowel(character) else '_' for character in word])
 
 
 def startGame(attempts=5):
