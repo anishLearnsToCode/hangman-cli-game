@@ -14,7 +14,7 @@ git clone https://github.com/anishLearnsToCode/hangman-cli-game.git
 Enter the directory and run the game using
 ````bash
 cd hangman-cli-game
-python main
+python main.py
 ````
 
 Enjoy!

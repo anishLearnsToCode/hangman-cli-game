@@ -38,4 +38,4 @@ def gameStatus(visibleAlphabets, attemptsRemaining):
     information("Current State: ", end=" ")
     for i in visibleAlphabets:
         information(i, end=" ")
-    warning('\tAttempts Remaining : ' + attemptsRemaining)
+    warning('\tAttempts Remaining : ' + str(attemptsRemaining))
