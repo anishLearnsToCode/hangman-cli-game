@@ -3,7 +3,7 @@
 This game was built during the online Python workshop for 
 [What After College](https://www.linkedin.com/school/whataftercollege/)
 to demonstrate basic usage of functions, loops and modules in Python. This project is
-the capstone project part of [this](https://github.com/anishLearnsToCode/python-workshop-1) workshop.
+the capstone project part of Python workshop.
 
 To run the game on your machine simply clone it from this repository to your machine
 using
