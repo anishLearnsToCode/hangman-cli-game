@@ -47,12 +47,11 @@ def startGame(attempts=5):
     while True:
         guess = input('Guess a character: ')
         print()
-
         visibleAlphabets, attempts = updateVisibleAlphabetsWithGuess(actualWord, guess, visibleAlphabets, attempts)
         printer.gameStatus(visibleAlphabets, attempts)
         if gameHasEnded(actualWord, visibleAlphabets, attempts):
             break
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     startGame()

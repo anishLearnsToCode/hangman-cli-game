@@ -16,7 +16,7 @@ class Colors:
     END = "\033[0m"
 
 
-def success(text='', end='\n' """ delimeter """):
+def success(text='', end='\n'):
     print(Colors.GREEN + Colors.BOLD + text + Colors.END, end=end)
     return True
 
@@ -35,7 +35,7 @@ def warning(text='', end='\n'):
 
 
 def gameStatus(visibleAlphabets, attemptsRemaining):
-    information("Current State: ", end=" ")
-    for i in visibleAlphabets:
-        information(i, end=" ")
+    information('Current State: ', end=' ')
+    for character in visibleAlphabets:
+        information(character, end=' ')
     warning('\tAttempts Remaining : ' + str(attemptsRemaining))
