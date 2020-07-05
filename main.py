@@ -5,13 +5,9 @@ vowels = ('a', 'e', 'i', 'o', 'u')
 
 
 def getUpdatedVisibleAlphabets(actualWord, visibleAlphabets, guess):
-    guessedAlphabets = ''
-
-    for i in range(len(actualWord)):
-        # If character is missing and actual character is equal to guessed character
-        guessedAlphabets += guess if visibleAlphabets[i] == '_' and actualWord[i] == guess else visibleAlphabets[i]
-
-    return guessedAlphabets
+    return ''.join(
+        [guess if actualWord[index] == guess else visibleAlphabets[index] for index in range(len(actualWord))]
+    )
 
 
 def updateVisibleAlphabetsWithGuess(actualWord, guess, visibleAlphabets, attemptsRemaining):
