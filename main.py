@@ -6,7 +6,7 @@ vowels = ('a', 'e', 'i', 'o', 'u')
 
 def getUpdatedVisibleAlphabets(actualWord, visibleAlphabets, guess):
     return ''.join(
-        [guess if actualWord[index] == guess else visibleAlphabets[index] for index in range(len(actualWord))]
+        [guess if actualWord[index] is guess else visibleAlphabets[index] for index in range(len(actualWord))]
     )
 
 
@@ -19,7 +19,7 @@ def updateVisibleAlphabetsWithGuess(actualWord, guess, visibleAlphabets, attempt
 
 
 def gameHasEnded(actualWord, guessedWord, attemptsRemaining):
-    if guessedWord == actualWord:
+    if guessedWord is actualWord:
         return printer.success("You WON! :D")
     elif attemptsRemaining <= 0:
         printer.failure("You Lost :(")
