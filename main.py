@@ -19,10 +19,10 @@ def updateVisibleAlphabetsWithGuess(actualWord, guess, visibleAlphabets, attempt
 
 
 def gameHasEnded(actualWord, guessedWord, attemptsRemaining):
-    if guessedWord is actualWord:
-        return printer.success("You WON! :D")
+    if guessedWord == actualWord:
+        return printer.success('You WON! :D')
     elif attemptsRemaining <= 0:
-        printer.failure("You Lost :(")
+        printer.failure('You Lost :(')
         return printer.information('Word was ' + actualWord)
     return False
 
@@ -50,4 +50,4 @@ def startGame(attempts=5):
 
 
 if __name__ == '__main__':
-    startGame()
+    startGame(7)
