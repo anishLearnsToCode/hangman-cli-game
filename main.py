@@ -6,7 +6,7 @@ vowels = ('a', 'e', 'i', 'o', 'u')
 
 def getUpdatedVisibleAlphabets(actualWord, visibleAlphabets, guess):
     return ''.join(
-        [guess if actualWord[index] is guess else visibleAlphabets[index] for index in range(len(actualWord))]
+        [guess if guess is actualWord[index] else visibleAlphabets[index] for index in range(len(actualWord))]
     )
 
 
