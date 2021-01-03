@@ -1,8 +1,6 @@
 # Hangman CLI Game
 
-![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://github.com/anishLearnsToCode/hangman-cli-game)
 ![made-with-python](https://img.shields.io/badge/Made%20with-python-1f425f.svg)
-[![Generic badge](https://img.shields.io/badge/LICENSE-MIT-<COLOR>.svg)](LICENSE)
 
 This game was built during the online Python workshop for 
 [What After College](https://www.linkedin.com/school/whataftercollege/)
