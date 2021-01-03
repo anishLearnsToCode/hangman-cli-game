@@ -21,7 +21,7 @@ def updateVisibleAlphabetsWithGuess(actualWord, guess, visibleAlphabets, attempt
 def gameHasEnded(actualWord, guessedWord, attemptsRemaining):
     if guessedWord == actualWord:
         return printer.success('You WON! :D')
-    elif attemptsRemaining <= 0:
+    elif attemptsRemaining == 0:
         printer.failure('You Lost :(')
         return printer.information('Word was ' + actualWord)
     return False
@@ -38,16 +38,13 @@ def createVisibleAlphabets(word):
 def startGame(attempts=5):
     actualWord = randomWordGenerator.getRandomWord()
     visibleAlphabets = createVisibleAlphabets(actualWord)
-    printer.gameStatus(visibleAlphabets, attempts)
 
-    while True:
+    while not gameHasEnded(actualWord, visibleAlphabets, attempts):
+        printer.gameStatus(visibleAlphabets, attempts)
         guess = input('Guess a character: ')
         print()
         visibleAlphabets, attempts = updateVisibleAlphabetsWithGuess(actualWord, guess, visibleAlphabets, attempts)
-        printer.gameStatus(visibleAlphabets, attempts)
-        if gameHasEnded(actualWord, visibleAlphabets, attempts):
-            break
 
 
 if __name__ == '__main__':
-    startGame(7)
+    startGame(attempts=7)

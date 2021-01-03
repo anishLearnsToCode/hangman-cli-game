@@ -34,7 +34,7 @@ def warning(text='', end='\n'):
     print(Colors.YELLOW + Colors.BOLD + text + Colors.END, end=end)
 
 
-def gameStatus(visibleAlphabets, attemptsRemaining):
+def gameStatus(visibleAlphabets: str, attemptsRemaining: int) -> None:
     information('Current State: ', end=' ')
     for character in visibleAlphabets:
         information(character, end=' ')
