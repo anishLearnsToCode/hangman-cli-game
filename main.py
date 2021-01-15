@@ -2,15 +2,16 @@ import randomWordGenerator
 import printer
 
 vowels = ('a', 'e', 'i', 'o', 'u')
+EMPTY_STRING = ''
 
 
 def getUpdatedVisibleAlphabets(actualWord, visibleAlphabets, guess):
-    return ''.join(
+    return EMPTY_STRING.join(
         [guess if guess is actualWord[index] else visibleAlphabets[index] for index in range(len(actualWord))]
     )
 
 
-def updateVisibleAlphabetsWithGuess(actualWord, guess, visibleAlphabets, attemptsRemaining):
+def updateVisibleAlphabetsWithGuess(actualWord: str, guess: str, visibleAlphabets, attemptsRemaining):
     if guess in actualWord:
         visibleAlphabets = getUpdatedVisibleAlphabets(actualWord, visibleAlphabets, guess)
     else:
@@ -21,18 +22,18 @@ def updateVisibleAlphabetsWithGuess(actualWord, guess, visibleAlphabets, attempt
 def gameHasEnded(actualWord, guessedWord, attemptsRemaining):
     if guessedWord == actualWord:
         return printer.success('You WON! :D')
-    elif attemptsRemaining == 0:
+    elif attemptsRemaining <= 0:
         printer.failure('You Lost :(')
-        return printer.information('Word was ' + actualWord)
+        return printer.information(f'Word was {actualWord}')
     return False
 
 
-def isVowel(character):
+def isVowel(character: str) -> bool:
     return character in vowels
 
 
-def createVisibleAlphabets(word):
-    return ''.join([character if isVowel(character) else '_' for character in word])
+def createVisibleAlphabets(word: str) -> str:
+    return EMPTY_STRING.join([character if isVowel(character) else '_' for character in word])
 
 
 def startGame(attempts=5):

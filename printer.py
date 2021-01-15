@@ -16,21 +16,21 @@ class Colors:
     END = "\033[0m"
 
 
-def success(text='', end='\n'):
+def success(text='', end='\n') -> True:
     print(Colors.GREEN + Colors.BOLD + text + Colors.END, end=end)
     return True
 
 
-def failure(text='', end='\n'):
+def failure(text='', end='\n') -> None:
     print(Colors.RED + Colors.BOLD + text + Colors.END, end=end)
 
 
-def information(text='', end='\n'):
+def information(text='', end='\n') -> bool:
     print(Colors.BLUE + Colors.BOLD + text + Colors.END, end=end)
     return True
 
 
-def warning(text='', end='\n'):
+def warning(text='', end='\n') -> None:
     print(Colors.YELLOW + Colors.BOLD + text + Colors.END, end=end)
 
 
@@ -38,4 +38,4 @@ def gameStatus(visibleAlphabets: str, attemptsRemaining: int) -> None:
     information('Current State: ', end=' ')
     for character in visibleAlphabets:
         information(character, end=' ')
-    warning('\tAttempts Remaining : ' + str(attemptsRemaining))
+    warning(f'\tAttempts Remaining : {attemptsRemaining}')
