@@ -1,5 +1,5 @@
-import randomWordGenerator
-import printer
+from utils import printer
+from utils import randomWordGenerator
 
 vowels = ('a', 'e', 'i', 'o', 'u')
 EMPTY_STRING = ''
