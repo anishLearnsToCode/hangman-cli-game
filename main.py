@@ -48,4 +48,4 @@ def startGame(attempts=5):
 
 
 if __name__ == '__main__':
-    startGame(attempts=7)
+    startGame(attempts=6)
