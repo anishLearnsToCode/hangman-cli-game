@@ -21,10 +21,12 @@ def updateVisibleAlphabetsWithGuess(actualWord: str, guess: str, visibleAlphabet
 
 def gameHasEnded(actualWord, guessedWord, attemptsRemaining):
     if guessedWord == actualWord:
-        return printer.success('You WON! :D')
+        printer.success('You WON! :D')
+        return True
     elif attemptsRemaining <= 0:
         printer.failure('You Lost :(')
-        return printer.information(f'Word was {actualWord}')
+        printer.information(f'Word was {actualWord}')
+        return True
     return False
 
 
