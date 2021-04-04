@@ -1,17 +1,19 @@
+from typing import Tuple
+
 from utils import printer
 from utils import randomWordGenerator
 
-vowels = ('a', 'e', 'i', 'o', 'u')
+VOWELS = ('a', 'e', 'i', 'o', 'u')
 EMPTY_STRING = ''
 
 
-def getUpdatedVisibleAlphabets(actualWord, visibleAlphabets, guess):
+def getUpdatedVisibleAlphabets(actualWord: str, visibleAlphabets: str, guess: str) -> str:
     return EMPTY_STRING.join(
-        [guess if guess is actualWord[index] else visibleAlphabets[index] for index in range(len(actualWord))]
+        [guess if guess == actualWord[index] else visibleAlphabets[index] for index in range(len(actualWord))]
     )
 
 
-def updateVisibleAlphabetsWithGuess(actualWord: str, guess: str, visibleAlphabets, attemptsRemaining):
+def updateVisibleAlphabetsWithGuess(actualWord: str, guess: str, visibleAlphabets: str, attemptsRemaining: int) -> Tuple[str, int]:
     if guess in actualWord:
         visibleAlphabets = getUpdatedVisibleAlphabets(actualWord, visibleAlphabets, guess)
     else:
@@ -31,7 +33,7 @@ def gameHasEnded(actualWord, guessedWord, attemptsRemaining):
 
 
 def isVowel(character: str) -> bool:
-    return character in vowels
+    return character in VOWELS
 
 
 def createVisibleAlphabets(word: str) -> str:

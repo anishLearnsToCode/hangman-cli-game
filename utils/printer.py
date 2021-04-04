@@ -18,7 +18,7 @@ def warning(text='', end='\n') -> None:
 
 
 def gameStatus(visibleAlphabets: str, attemptsRemaining: int) -> None:
-    information('Current State: ', end=' ')
+    information('Current State:  ', end='')
     for character in visibleAlphabets:
         information(character, end=' ')
     warning(f'\tAttempts Remaining : {attemptsRemaining}')
